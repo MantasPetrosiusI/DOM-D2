@@ -51,6 +51,7 @@
           questions!
         </h2>
       </div>
+      <footer onclick="changeFooterText()"><h3>FOOTER?</h3></footer>
       <script>
         /* EXERCISE 1
          Write a function for changing the title of the document in something else.
@@ -148,7 +149,7 @@
         const makeItClickable = function () {
           let colors = ["green", "red", "yellow", "blue"];
           let head = document.getElementsByTagName('h1');
-          let colorNo = Math.random()*colors.length;
+          let colorNo = Math.floor(Math.random()*colors.length);
           head[0].style.color = colors[colorNo];
         };
   
@@ -157,16 +158,22 @@
         */
   
         const changeFooterText = function () {
-          //
+          let randomWords = ["most", "random", "words", "ever"];
+          let foots = document.getElementsByTagName('footer');
+          let wordNum = Math.floor(Math.random()*randomWords.length);
+          foots[0].innerHTML = randomWords[wordNum];
         };
   
         /* EXERCISE 11
          Attach an event listener to the input field in the page for console logging its value just after any keystroke.
         */
+      function strokes(e){
+        console.log(inputField.innerHTML)
+      }
   
         const inputField = document.getElementById("input-field");
+        inputField.addEventListener('keyup', (event)=>{console.log(event.key)})
         
-        inputField.addEventListener("keyup")
         // ...
   
         /* EXERCISE 12
